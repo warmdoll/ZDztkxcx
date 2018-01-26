@@ -1,0 +1,114 @@
+/* pages/component/myconponent.wxss */
+/*无限极 章节列表  */
+.over-circle{display:inline-block;padding:0.1rem;overflow: hidden;text-overflow: ellipsis;    white-space: nowrap;vertical-align: middle;}
+.commonico{position: relative;}
+.commonico:after,.commonico:before{position: absolute;content:'';background-image: url("http://wap2.wangxiao.cn/ztkxcx/images/icon1.png");background-repeat: no-repeat;background-size: 1500rpx 750rpx;}
+.clearfix:after{visibility:hidden;display:block; font-size:0; content:'\20'; clear:both; height:0;}
+
+.fl{float:left;}
+.rt{float: right;}
+.fontc6{
+  color: #666;
+  font-size: 24rpx;
+}
+.fontc9{
+  color: #999;
+  font-size: 24rpx;
+}
+.fontc{
+  color: #666;
+}
+.fontc3{
+  color: #333;
+}
+.fontcbl{
+  color: #58a6f8;
+}
+.fonts24{font-size: 24rpx;}
+.fontsize28{font-size: 28rpx;}
+.list-ul .list-li .over-circle{
+  font-size:30rpx;
+  color: #333;
+
+}
+.chapter-list-box{
+  padding: 30rpx;
+  
+}
+.list-ul>.list-li>.list-ul{
+  padding-left: 32rpx;
+  
+  margin-left: 20rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.list-ul>.list-li>.list-ul.borderlf{
+  border-left: 1px solid #58a6f8;
+}
+
+.list-ul>.list-li .list-ul>.list-li{
+  padding-left: 0;
+  margin-top: 20rpx;
+}
+
+.list-ul>.list-li>.list-li_text {
+  color: #666;
+   font-size: 30rpx;
+}
+.list-ul>.list-li>.list-li_text,
+.width100{width: 100%;}
+
+.list-ul>.list-li.cha-ico2.commonico::before{
+ width: 50rpx;
+  height: 40rpx;
+   background-position: -755rpx 0rpx;
+   vertical-align: middle;
+   top: 14rpx;
+   left: -60rpx;
+}
+.list-ul.close{
+  display:none;
+}
+
+.list-ul>.list-li.cha-ico3,
+.list-ul>.list-li.cha-ico2{position: relative;}
+.list-ul>.list-li.cha-ico3:before{
+  position: absolute;
+  content:'';
+  display: block;
+   width: 20rpx;
+  height: 20rpx;
+  background-color:#58a6f8; 
+   border-radius: 50%;
+   top: 20rpx;
+   left: -41rpx;
+}
+.course-ico.commonico::before,
+.share-ico.commonico::before,
+.cart-ico.commonico::before{
+   width: 50rpx;
+   height: 40rpx;
+  vertical-align: middle;
+   top: 10rpx;
+   left: -60rpx;
+}
+.course-ico.commonico::before{
+   background-position: -805rpx 0rpx;
+   left: -55rpx;
+   top:10rpx;
+   width: 45rpx;
+}
+.share-ico.commonico::before{
+   background-position: -850rpx 0rpx;
+    left: -55rpx;
+   width: 45rpx;
+}
+.cart-ico.commonico::before{
+   background-position: -890rpx 0rpx;
+}
+.list-ul .list-li .iconfont{
+  color: #58a6f8;
+}
+.pbuy-stu{margin-left: 30rpx;}
+.clist-li-title{width: 70%;}
+.clist-li-title .over-circle{width: 100%;}

@@ -1,0 +1,55 @@
+{
+  "pages":[
+    "pages/study/study",
+    "pages/index/index",
+    "pages/my/my",
+    "pages/course/course",
+    "pages/live/live",
+    "pages/logs/logs"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2f7aee",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#58a6f8",
+    "list": [
+      {
+        "pagePath": "pages/study/study",
+        "color": "#999",
+        "selectedColor": "#58a6f8",
+        "iconPath": "pages/images/ft-1.png",
+        "selectedIconPath": "pages/images/ft-sted-1.png",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "color": "#999",
+        "selectedColor": "#58a6f8",
+        "iconPath": "pages/images/ft-2.png",
+        "selectedIconPath": "pages/images/ft-sted-2.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/live/live",
+        "color": "#999",
+        "selectedColor": "#58a6f8",
+        "iconPath": "pages/images/ft-3.png",
+        "selectedIconPath": "pages/images/ft-sted-3.png",
+        "text": "直播"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "color": "#999",
+        "selectedColor": "#58a6f8",
+        "iconPath": "pages/images/ft-4.png",
+        "selectedIconPath":"pages/images/ft-sted-4.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

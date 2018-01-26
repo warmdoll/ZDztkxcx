@@ -1,0 +1,18 @@
+<view class='module-box box-shadow common-bgwhite' >
+      <swiper current="{{currentTab}}" indicator-dots="true" indicator-color="#dbdbdb" indicator-active-color="#58a6f8"  duration="1000" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+        <!-- 我是哈哈 -->  
+        <block wx:for="{{ModulesObj}}" wx:key="h">
+          <swiper-item> 
+              <view class='flexbox common-flexrow' mode="aspectFill">
+              <block wx:for="{{item}}" wx:key="h">
+                <view class='flex-list'>
+                  <view class='flex-item'>
+                    
+                  </view>
+                </view>
+                </block>
+            </view>
+        </swiper-item>  
+        </block>
+      </swiper> 
+    </view>
