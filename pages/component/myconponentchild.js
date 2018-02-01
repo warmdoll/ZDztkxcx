@@ -21,7 +21,8 @@ Component({
   data: {
     //arr: [4, 5, 6]
     str1: {},
-    activeIndex: 0
+    activeIndex: 0,
+    activeObj: {}
   },
   //章节课接口
   getChapterfn: function () {
@@ -42,16 +43,28 @@ Component({
    */
   methods: {
     openList: function (e) {
-      var that = this;
-      if (that.data.activeIndex == 0) {
-        this.setData({
-          activeIndex: e.currentTarget.id
-        })
-      } else {
-        this.setData({
-          activeIndex: 0
-        })
-      }
+      var that = this, dataId = e.currentTarget.dataset.id;
+      
+      var obj = that.properties.childarr;
+      console.log(obj)
+      obj.forEach(function (i, v) {
+        console.log(i.open);
+        if (i.Id == dataId ) {
+          //如果是关闭状态，则展开
+          if(!i.open){
+            i.open = !i.open;            
+          }
+          //如果是展开状态，则关闭
+          else{
+            i.open = !i.open;
+          }
+
+          that.setData({
+            childarr: obj
+          })
+          
+        } 
+      })
     }
   }
 })

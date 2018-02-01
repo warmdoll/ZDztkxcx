@@ -5,7 +5,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -33,7 +32,28 @@ App({
       }
     })
   },
+  //全局属性和方法
   globalData: {
-    userInfo: null
+    signName:'',//考试名称
+    exameId:'',//考试id
+    userInfo: null,//用户名
+    // 请求接口
+    wxRequestfn: function (requestObj){
+      wx.request({
+        url: requestObj.url,
+        method: requestObj.method,
+        header: {
+          "SysClassId": "e8a38467-6064-4684-be0c-f500b42f8238",
+          'from': 'xcx'
+        },
+        data: requestObj.dataobj,
+        success: function (res) {
+          requestObj.callback1(res);
+        },
+        fail:function(){
+          requestObj.callback2;
+        }
+      });
+    },
   }
 })

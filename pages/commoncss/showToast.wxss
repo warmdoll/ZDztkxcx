@@ -41,3 +41,8 @@
   width: 50rpx;
   height: 50rpx;
 }
+.lianxi-title {
+margin-bottom:30rpx;
+font-size:28rpx;
+}
+.h-line{width:20rpx;height:20rpx;margin:0 20rpx;color: #666;}

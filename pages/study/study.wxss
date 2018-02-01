@@ -31,7 +31,7 @@
   padding: 0 30rpx 0 60rpx;
     margin: 0 20rpx 0 80rpx;
   display: block;
-  width: 300rpx;
+  max-width: 230rpx;
 }
 .common-bgwhite{
   background-color: #fff;
@@ -67,7 +67,7 @@ image{
 .upgrade-btn{float:right;border-radius: 60rpx;padding:0 50rpx;border: 1px solid #ccc;height: 60rpx;line-height:60rpx;font-size:24rpx;color: #333;margin-top: 10rpx;}
 .upgrade-service,.progress-width{width: 90%;}
 .line{width:100%;height: 10rpx;background-color: #f2f2f2;border-top: 1px solid #e6e6e6;border-bottom: 1px solid #e6e6e6;}
-.h-line{width:20rpx;height:20rpx;margin:0 20rpx;color: #666;}
+
 .start{width: 30rpx;height: 30rpx;}
 .tag-btn{padding:5rpx 10rpx;border-radius: 10rpx;margin-right: 10rpx; font-size: 24rpx;}
 .doti-box{width:100%;margin-bottom:15rpx;}
@@ -75,7 +75,6 @@ image{
 .doti-btn.doti{background-color: #58a6f8;color: #fff;}
 .doti-btn.havedoti{border:1px solid #cbcbcb;background-color: #f1f1f1;color: #666;}
 .lianxi-recommend{padding: 10rpx 30rpx;box-sizing: border-box;}
-.lianxi-title{margin-bottom:30rpx;font-size: 28rpx;}
 .lianx-tag{margin-top: 30rpx;}
 .tag-btn.gaopin{border: 1px solid #5b95f4;color: #5b95f4;}
 .tag-btn.yicuo{border: 1px solid #e93a3f;color: #e93a3f;}

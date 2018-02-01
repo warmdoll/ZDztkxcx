@@ -17,7 +17,8 @@ Component({
   data: {
     //arr: [4, 5, 6]
     str1:{},
-    activeIndex:0
+    activeIndex:0,
+    activeObj:{}
   },
  
   /**
@@ -32,25 +33,47 @@ Component({
       wx.request({
         url: 'https://apimvc.wangxiao.cn/ZhangJieKeService/GetClassHoursCart?username=' + userName + '&subjectId=' + subjectId,
         success: function (res) {
-          that.setData({
-            str: res.data
+          var obj = res.data;
+          //第一级添加open状态 第一级的第一个列表添加open为false
+
+          obj.Data.ClassHoursList.forEach(function(i,v){
+            if(v==0){
+              i.open=true;
+            }else{
+              i.open = false;
+            }
+            //第二级、三级。。。递归循环添加open标记
+            eachOpen(i)
           })
-          console.log(res.data)
+          that.setData({           str:obj         });
+       
+        }
+      });
+      //递归调用 数据添加open标记
+      function eachOpen(a) {
+        a.Children.forEach(function (i, v) {
+            i.open = false;
+          if (i.Children !== null && i.Children.length > 0) {
+            eachOpen(i)
+          }
+        })
+      }
+    },
+   
+    openList:function(e){
+      var that = this, dataId = e.currentTarget.dataset.id;
+      var obj = that.properties.str;
+      var firstObj = obj.Data.ClassHoursList;
+
+
+      firstObj.forEach(function (i, v) {
+        if (i.Id == dataId){
+          i.open=!i.open;
+          that.setData({
+            str: obj
+          })
         }
       })
-    },
-    openList:function(e){
-      var that=this;
-      
-      if (that.data.activeIndex==0){
-        this.setData({
-          activeIndex: e.currentTarget.id
-        })
-      }else{
-        this.setData({
-          activeIndex: 0
-        })
-      } 
     }
   },
   ready:function(){

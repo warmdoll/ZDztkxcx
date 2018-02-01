@@ -1,1 +1,69 @@
-<view>直播页面</view>
+<!-- tab标签切换 -->
+<view class='tab-box clearfix'>
+  <view class='fl tab-item tc' id='the-id'>
+    <text class="text-item {{currentTab==0 ? 'act' : ''}}"  catchtap="swichNav" data-current="0">即将开始        </text>
+  </view>
+  <view class='fl tab-item tc' >
+    <text class="text-item {{currentTab==1 ? 'act' : ''}}" catchtap="swichNav"  data-current="1">精彩回放       </text>
+  </view>
+</view>
+<!--tab标签切换内容 -->
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style='height:1000px'>  
+    <swiper-item>  
+      <view class='live-list-top'>
+          <image class='line-top-img' src='../images/live-top.png'></image>
+          <view class='live-list-detail'>老师正在备课中，直播马上开始...</view>
+      </view>
+      <view class='flexbox'>
+        <view class='flex-box flex-between'>
+          <view class='flex-img'>
+             <image class='img-list flex-item' src=''></image>
+          </view>
+          <view class='flex-item flex-item-middle '>
+            <view class='live-title over-circle'>开启试讲流程的通关魔法</view>
+            <view class='flex-box flex-between live-list-bottom'>
+                <text class=' fontc9'>王老师</text>
+                <view class='commonico live-time fontc9'>12:00-13:20</view>
+            </view>
+          </view>
+          <view class='flex-item live-btn-box'>
+             <view class='live-btn commonico'>直播中</view>
+          </view>
+         
+        </view>
+        
+      </view>
+      <view class='live-list-top'>
+          <image class='line-top-img' src='../images/live-top.png'></image>
+          <view class='live-list-detail'>老师正在备课中，直播马上开始...</view>
+      </view>
+      <view class='flexbox'>
+        <view class='flex-box flex-between'>
+          <view class='flex-img'>
+             <image class='img-list flex-item' src=''></image>
+          </view>
+          <view class='flex-item flex-item-middle '>
+            <view class='live-title over-circle'>开启试讲流程的通关魔法</view>
+            <view class='flex-box flex-between live-list-bottom'>
+                <text class=' fontc9'>王老师</text>
+                <view class='commonico live-time fontc9'>12:00-13:20</view>
+            </view>
+          </view>
+          <view class='flex-item'>
+             <view class='live-btn'>直播中</view>
+          </view>
+         
+        </view>
+        
+      </view>
+    </swiper-item>  
+      
+    <!-- 我是呵呵 -->  
+    <swiper-item>  
+      <view class='list-ul'>
+          <view class='list-li'>
+          as
+          </view>
+      </view>  
+    </swiper-item>  
+</swiper> 

@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/selectedexame/selectedexame",
+    "pages/subject/subject",
+    "pages/live/live",
+    "pages/course/course",
     "pages/study/study",
     "pages/index/index",
     "pages/my/my",
-    "pages/course/course",
-    "pages/live/live",
     "pages/logs/logs"
     
   ],
@@ -31,7 +33,7 @@
         "color": "#999",
         "selectedColor": "#58a6f8",
         "iconPath": "pages/images/ft-2.png",
-        "selectedIconPath": "pages/images/ft-sted-2.png",
+        "selectedIconPath": "pages/images/ft-sted-3.png",
         "text": "课程"
       },
       {
@@ -39,7 +41,7 @@
         "color": "#999",
         "selectedColor": "#58a6f8",
         "iconPath": "pages/images/ft-3.png",
-        "selectedIconPath": "pages/images/ft-sted-3.png",
+        "selectedIconPath": "pages/images/ft-sted-2.png",
         "text": "直播"
       },
       {

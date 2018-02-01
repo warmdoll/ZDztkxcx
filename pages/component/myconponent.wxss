@@ -65,9 +65,9 @@
 .list-ul .list-li.cha-ico1.commonico::before{
    background-position: -660rpx 10rpx;
 }
-.list-ul>.list-li .cha-ico1.close.commonico::before{
+.list-ul .list-li.cha-ico1.close.commonico::before{
   
-    background-position: -705rpx 0rpx;
+    background-position: -708rpx 10rpx;
 }
 .list-ul>.list-li .cha-ico1{position: relative;}
 .course-ico.commonico::before{

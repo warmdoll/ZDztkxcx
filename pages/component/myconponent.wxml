@@ -1,7 +1,7 @@
 <!--pages/template/componont/myCon.wxml-->
-<view class='list-ul {{activeIndex==index ? "borderlf" : ""}}'  wx:for="{{str.Data.ClassHoursList}}"  wx:for-item="item"  wx:key="key"  id="{{index}}" >
-  <view class='cha-ico1 commonico list-li' data-id="{{item.Id}}" bindtap='openList'>
-    <view class=' clearfix'>
+<view class='list-ul {{item.open? "borderlf" : ""}}'  wx:for="{{str.Data.ClassHoursList}}"  wx:for-item="item"  wx:key="key"  id="{{index}}" >
+  <view class='cha-ico1 commonico list-li  {{item.open? "close" : ""}}' >
+    <view class=' clearfix' data-id="{{item.Id}}" catchtap='openList'>
       <view class='clist-li-title fl' >
         <view class='over-circle'>{{item.Title}}</view> 
       </view>
@@ -35,7 +35,7 @@
    </view>
 
     <block wx:if="{{item.Children.length>0&&item.Children!=null}}">
-      <myconponentchild style='{{activeIndex==index ? "" : "display:none"}};' childarr='{{item.Children}}'></myconponentchild>
+      <myconponentchild style='{{item.open ? "" : "display:none"}};' childarr='{{item.Children}}'></myconponentchild>
     </block>
   </view>
 </view>

@@ -2,7 +2,7 @@
 
 <view class="list-ul " wx:for="{{childarr}}"  wx:for-item="item"  wx:key="key" id="{{index}}">
   <view class='list-li {{item.Children.length>0&&item.Children!=null?"cha-ico2 commonico ":"cha-ico3"}}'>
-  <view class=' clearfix'  data-id="{{item.Id}}" products-id="{{item.Id}}" bindtap='openList' >
+  <view class=' clearfix'  data-id="{{item.Id}}"  catchtap='{{item.Children!=null&&item.Children.length>0 ? "openList":""}}' >
    <view class='clist-li-title fl'>
        <view class='over-circle'>{{item.Title}}</view> 
     </view>
@@ -37,7 +37,7 @@
    </view>
 
     <block wx:if="{{item.Children.length>0&&item.Children!=null}}">
-      <myconponentchild style='{{activeIndex==index ? "" : "display:none"}};' childarr='{{item.Children}}'></myconponentchild>
+      <myconponentchild style='{{item.open ? "" : "display:none"}};' childarr='{{item.Children}}'></myconponentchild>
     </block>
   </view>
 </view>

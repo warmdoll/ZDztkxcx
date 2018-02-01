@@ -1,10 +1,13 @@
 var feedbackApi = require('../commonjs/showToast');//引入消息提醒暴露的接口  
+
 var interval;
 var varName;
 Page({
   data: {
-    title: "初级会计职称",
-    subjectTitle:"初级会计实务",
+    title: "",
+    exameId:"",
+    subjectTitle:"",
+    subjectId:'',
     signName:"",
     ModulesObj: {},
     getUpGradesObj:{},
@@ -27,10 +30,34 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
+      that.getMessage();
       that.getmodulefn();//获取模块
       that.getUpGradesfn();//升级服务
       that.getChapterfn();
      
+  },
+  //获取考试科目名称
+  getMessage:function(){
+    var that=this;
+    try {
+      var exameName = wx.getStorageSync('exameName'),
+        exameId = wx.getStorageSync('exameId'),
+        subjectName = wx.getStorageSync('subjectName'),
+        subjectId = wx.getStorageSync('subjectId'),
+        signName = wx.getStorageSync('signName');
+      if (exameName && exameId && subjectName && subjectId && signName) {
+        that.setData({
+          title: exameName,
+          exameId: exameId,
+          subjectTitle: subjectName,
+          subjectId: subjectId,
+          signName: signName,
+        })
+        console.log(that.data)
+      }
+    } catch (e) {
+     console.log("获取失败")
+    }
   },
   // 获取模块的接口
   getmodulefn:function(){
@@ -41,7 +68,7 @@ Page({
         //请求每日一练 考点练习 历年真题。。。模块的接口
         wx.request({
           url: url,
-          data: {},
+          data: {}, 
           success: function (res) {
             
             if (res.data.ResultCode == 0) {
@@ -72,15 +99,17 @@ Page({
   },
   //答题数量接口 需要传入Data对象 post请求
   getUpGradesfn:function(){
+    
     var that=this;
+    var obj={
+      Username: "latacat",
+      ExamID: that.data.exameId,
+      SubjectID: that.data.subjectId
+    }
     wx.request({
       url: 'https://tikuapi.wangxiao.cn/api/SysClassEstimate/GetUpGrades',
       data: {
-          Data:{
-            Username: "latacat",
-            ExamID: "e9fd5aa8-48a8-406d-bfc6-5728a9c6a131",
-            SubjectID: "591dc854-99a9-4896-a542-ce7f0c9099be"
-          }
+        Data: obj
       },
       method:'POST',
       success: function (res) {
@@ -100,14 +129,13 @@ Page({
   getChapterfn:function(){
     var that=this,
       userName ="ztk_02567647",
-      subjectId ="4ca44210-2db1-451f-8b77-8453c57108e2";
+      subjectId = that.data.subjectId;
     wx.request({
       url: 'https://apimvc.wangxiao.cn/ZhangJieKeService/GetClassHoursCart?username=' + userName + '&subjectId=' + subjectId,
       success:function(res){
           that.setData({
             getChapter: res.data
           })
-          console.log(res.data)
           that.drawCircle(res.data.Data.StudyProgress);//章节进度绘制
       }
     })
@@ -182,7 +210,8 @@ Page({
    */
   onShow: function () {
     //修改NavigationBar标题
-    wx.setNavigationBarTitle({ title: this.data.title })
+    wx.setNavigationBarTitle({ title: this.data.title });
+    
   },
 
   /**
@@ -221,5 +250,12 @@ Page({
   },
   onMyEvent:function(e){
     console.log(e.detail)
+  },
+  //点击选择科目
+  gotoSelecsubject:function(){
+    var that=this;
+    wx.redirectTo({
+      url: '../subject/subject?id=' + that.data.exameId + "&frompage=study"
+    })
   }
 })

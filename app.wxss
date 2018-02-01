@@ -20,8 +20,18 @@ a{text-decoration:none;}
 .ft15{font-size:1.5rem;}
 
 .over-circle{display:inline-block;padding:0.1rem;overflow: hidden;text-overflow: ellipsis;    white-space: nowrap;vertical-align: middle;}
-.overtwo-circle{display: -webkit-box;overflow: hidden;word-break: break-all;-webkit-line-clamp: 2; -webkit-box-orient: vertical;}
-.flex-box{display: flex;display: -webkit-flex;}
+.overtwo-circle{display: -webkit-box;overflow: hidden;word-break: break-all;-webkit-line-clamp:2; -webkit-box-orient: vertical;}
+.over-circle3{display: -webkit-box;overflow: hidden;word-break: break-all;-webkit-line-clamp:3; -webkit-box-orient: vertical;}
+.flex-box{
+  display: -webkit-box;
+    display: -moz-box; 
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    }
+.flex-item1{
+  flex-grow:1;
+}
 .betweenplace{ 
     /*display:-webkit-box;
     display:-moz-box;
@@ -41,7 +51,8 @@ a{text-decoration:none;}
     justify-content:space-between;   
 }
 .commonico{position: relative;}
-.commonico:after,.commonico:before{position: absolute;content:'';background-image: url("http://wap2.wangxiao.cn/ztkxcx/images/icon1.png");background-repeat: no-repeat;background-size: 1500rpx 750rpx;}
+.commonico:after,.commonico:before{position: absolute;content:'';background-image: url("http://wap2.wangxiao.cn/ztkxcx/images/icon2.png");background-repeat: no-repeat;background-size: 1500rpx 750rpx;}
+
 .box-shadow{
   box-shadow: 4rpx 4rpx 20rpx #ccc;
 }
@@ -59,14 +70,33 @@ a{text-decoration:none;}
 .fontc3{
   color: #333;
 }
+.fontc324{
+   color: #333;
+   font-size: 24rpx;
+}
+.fonts24{
+  font-size: 24rpx;
+}
 .fontcbl{
   color: #58a6f8;
 }
+.text-item.act{
+  color:#58a6f8;
+  border-bottom:4rpx solid #58a6f8;
+  
+}
 .fonts24{font-size: 24rpx;}
 .fontsize28{font-size: 28rpx;}
-
+.course-fontyell{
+  color: #ff8500;
+  font-size: 28rpx;
+}
 .chapter-list-box{
   padding: 30rpx;
+}
+.flex-between{
+  justify-content:space-between;
+   align-items:  flex-end;
 }
 @font-face {
   font-family: 'iconfont';  /* project id 547715 */
